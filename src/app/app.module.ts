@@ -11,7 +11,9 @@ import { ContainerComponent } from './layout/container/container.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button'
+import { MatButtonModule } from '@angular/material/button';
+import { LoginComponent } from './layout/login/login.component';
+import { AboutComponent } from './layout/about/about.component'
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { MatButtonModule } from '@angular/material/button'
     PrivateMenuComponent,
     HeaderComponent,
     FooterComponent,
-    ContainerComponent
+    ContainerComponent,
+    LoginComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
