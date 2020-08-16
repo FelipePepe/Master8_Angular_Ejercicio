@@ -3,13 +3,22 @@ import { Routes, RouterModule } from '@angular/router';
 import { ContainerComponent } from './layout/container/container.component';
 import { LoginComponent } from './layout/login/login.component';
 import { AboutComponent } from './layout/about/about.component';
+import { ProfileComponent } from './layout/profile/profile.component';
+import { CrudComponent } from './layout/crud/crud.component';
+import { GaleryComponent } from './layout/galery/galery.component';
+import { DashboardComponent } from './layout/dashboard/dashboard.component';
+import { LoggedInGuard } from './logged-in.guard'
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: ContainerComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'about', component: AboutComponent }
+  { path: 'about', component: AboutComponent },
+  { path: 'profile', component: ProfileComponent, canActivate: [LoggedInGuard] },
+  { path: 'crud', component: CrudComponent, canActivate: [LoggedInGuard] },
+  { path: 'galery', component: GaleryComponent, canActivate: [LoggedInGuard] },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [LoggedInGuard] },
 ];
 
 @NgModule({

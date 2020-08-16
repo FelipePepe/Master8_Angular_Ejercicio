@@ -1,5 +1,6 @@
 <mat-toolbar color="primary">
   <img src="../../../assets/coollogo.png" alt="cool logo" />
-  <app-public-menu color="primary"></app-public-menu> &nbsp;&nbsp;
-  <app-private-menu color="secundary"></app-private-menu>
+  <app-public-menu [hidden]="privateMenu" color="primary"></app-public-menu>
+  &nbsp;&nbsp;
+  <app-private-menu [hidden]="!privateMenu" color="secundary"></app-private-menu>
 </mat-toolbar>

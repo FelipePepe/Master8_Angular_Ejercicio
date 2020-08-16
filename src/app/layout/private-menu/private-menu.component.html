@@ -1,4 +1,35 @@
-<button mat-raised-button color="primary">Dashboard</button>
-<button mat-raised-button color="primary">Galería</button>
-<button mat-raised-button color="primary">CRUD</button>
-<button mat-raised-button color="primary">Profile</button>
+<button
+  mat-raised-button
+  color="primary"
+  routerLink="/dashboard"
+  routerLinkActive="selected"
+>
+  Dashboard
+</button>
+<button
+  mat-raised-button
+  color="primary"
+  routerLink="/galery"
+  routerLinkActive="selected"
+>
+  Galería
+</button>
+<button
+  mat-raised-button
+  color="primary"
+  routerLink="/crud"
+  routerLinkActive="selected"
+>
+  CRUD
+</button>
+<button
+  mat-raised-button
+  color="primary"
+  routerLink="/profile"
+  routerLinkActive="selected"
+>
+  Profile
+</button>
+<button mat-raised-button color="primary" (click)="logout()">
+  Log Off
+</button>

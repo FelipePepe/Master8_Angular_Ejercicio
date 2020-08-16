@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../../auth.service';
 
 @Component({
   selector: 'app-private-menu',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrivateMenuComponent implements OnInit {
 
-  constructor() { }
+  router: Router;
+
+  constructor(public authService: AuthService, private routerprv: Router) {
+    this.router = routerprv;
+  }
 
   ngOnInit(): void {
+  }
+
+  logout(): boolean {
+    this.authService.logout();
+    return false;
   }
 
 }
