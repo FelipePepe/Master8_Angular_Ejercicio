@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
       }.bind(this), 2500);
     }
     else {
-      this.router.navigate(['dashboard']);
+      this.router.navigate(['dashboard'], {skipLocationChange: true});
     }
     return false;
   }
