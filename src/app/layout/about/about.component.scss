@@ -1,0 +1,52 @@
+.image {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.image img {
+	width: 25%;
+}
+
+#services {
+	text-align: center;
+	transform: translatez(0);
+}
+
+#services li {
+	width: 120px;
+	height: 140px;
+	display: inline-block;
+	margin: 20px;
+	list-style: none;
+}
+
+#services li div {
+	width: 120px;
+	height: 120px;
+	color: primary;
+	font-size: 3.4em;
+	text-align: center;
+	line-height: 120px;
+	background-color: #673ab7;
+	transition: all 0.5s ease;
+}
+
+#services li a {
+	color: #fff;
+}
+
+#services li div:hover {
+	transform: rotate(360deg);
+	border-radius: 100px;
+}
+#services li span {
+	width: 120px;
+	height: 20px;
+	display: block;
+	padding: 15px 0px;
+	color: #673ab7;
+	font-size: 1.2em;
+	text-align: center;
+}

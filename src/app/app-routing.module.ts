@@ -5,7 +5,7 @@ import { LoginComponent } from './layout/login/login.component';
 import { AboutComponent } from './layout/about/about.component';
 import { ProfileComponent } from './layout/profile/profile.component';
 import { CrudComponent } from './layout/crud/crud.component';
-import { GaleryComponent } from './layout/galery/galery.component';
+import { GalleryComponent } from './layout/gallery/gallery.component';
 import { DashboardComponent } from './layout/dashboard/dashboard.component';
 import { LoggedInGuard } from './logged-in.guard'
 
@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [LoggedInGuard] },
   { path: 'crud', component: CrudComponent, canActivate: [LoggedInGuard] },
-  { path: 'galery', component: GaleryComponent, canActivate: [LoggedInGuard] },
+  { path: 'gallery', component: GalleryComponent, canActivate: [LoggedInGuard] },
   { path: 'dashboard', component: DashboardComponent, canActivate: [LoggedInGuard] },
 ];
 

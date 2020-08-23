@@ -1,35 +1,37 @@
 <button
-  mat-raised-button
-  color="primary"
-  routerLink="/dashboard"
-  routerLinkActive="selected"
+	mat-raised-button
+	color="primary"
+	routerLink="/dashboard"
+	routerLinkActive="selected"
 >
-  Dashboard
+	Dashboard
 </button>
 <button
-  mat-raised-button
-  color="primary"
-  routerLink="/galery"
-  routerLinkActive="selected"
+	mat-raised-button
+	color="primary"
+	routerLink="/gallery"
+	routerLinkActive="selected"
 >
-  Galería
+	Galería
 </button>
 <button
-  mat-raised-button
-  color="primary"
-  routerLink="/crud"
-  routerLinkActive="selected"
+	mat-raised-button
+	color="primary"
+	routerLink="/crud"
+	routerLinkActive="selected"
 >
-  CRUD
+	CRUD
 </button>
 <button
-  mat-raised-button
-  color="primary"
-  routerLink="/profile"
-  routerLinkActive="selected"
+	mat-raised-button
+	color="primary"
+	routerLink="/profile"
+	routerLinkActive="selected"
 >
-  Profile
+	Profile
 </button>
 <button mat-raised-button color="primary" (click)="logout()">
-  Log Off
+	Log Off
 </button>
+
+<label class="userId">User: {{ username }} </label>

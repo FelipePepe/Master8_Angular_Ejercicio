@@ -1,48 +1,43 @@
 <div class="alert alert-danger" role="alert" *ngIf="message">
-  {{ message }}
+	{{ message }}
 </div>
 <mat-card>
-  <label>Login</label><br /><br /><br />
-  <form class="form-inline" *ngIf="!authService.getUser()">
-    <div class="form-group">
-      <mat-form-field appearance="fill">
-        <mat-label for="username">User: </mat-label>
-        <input
-          matInput
-          class="form-control"
-          name="username"
-          #username
-          placeholder="type user"
-        />
-      </mat-form-field>
-    </div>
-    <br />
-    <div class="form-group">
-      <mat-form-field appearance="fill">
-        <mat-label for="password">Password:</mat-label>
-        <input
-          matInput
-          class="form-control"
-          type="password"
-          name="password"
-          #password
-          placeholder="type pass"
-        />
-      </mat-form-field>
-    </div>
-    <br />
-    <button
-      mat-raised-button
-      color="primary"
-      class="btn btn-default"
-      (click)="login(username.value, password.value)"
-    >
-      Submit
-    </button>
-  </form>
+	<label>Login</label><br /><br /><br />
+	<form class="form-inline" *ngIf="!authService.getUsername()">
+		<div class="form-group">
+			<mat-form-field appearance="fill">
+				<mat-label for="username">User: </mat-label>
+				<input
+					matInput
+					class="form-control"
+					name="username"
+					#username
+					placeholder="type master8@lemoncode.net"
+				/>
+			</mat-form-field>
+		</div>
+		<br />
+		<div class="form-group">
+			<mat-form-field appearance="fill">
+				<mat-label for="password">Password:</mat-label>
+				<input
+					matInput
+					class="form-control"
+					type="password"
+					name="password"
+					#password
+					placeholder="type 12345678"
+				/>
+			</mat-form-field>
+		</div>
+		<br />
+		<button
+			mat-raised-button
+			color="primary"
+			class="btn btn-default"
+			(click)="login(username.value, password.value)"
+		>
+			Submit
+		</button>
+	</form>
 </mat-card>
-<div class="well" *ngIf="authService.getUser()">
-  Logged in as <b>{{ authService.getUser() }}</b
-  ><br /><br /><br />
-  <a href (click)="logout()">Log out</a>
-</div>

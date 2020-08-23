@@ -1,0 +1,19 @@
+.containerImage {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+button .left {
+	left: 10px;
+}
+
+button .right {
+	right: 10px;
+}
+
+.tile-image {
+	width: 100%;
+	height: auto;
+}

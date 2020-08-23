@@ -10,12 +10,14 @@ import { AuthService } from '../../auth.service';
 export class PrivateMenuComponent implements OnInit {
 
   router: Router;
+  username: string;
 
   constructor(public authService: AuthService, private routerprv: Router) {
     this.router = routerprv;
   }
 
   ngOnInit(): void {
+    this.username = this.authService.getUsername();
   }
 
   logout(): boolean {

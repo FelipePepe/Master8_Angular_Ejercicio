@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from '../../auth.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -10,12 +11,19 @@ import { AuthService } from '../../auth.service';
 
 export class HeaderComponent implements OnInit {
 
-  constructor(public authService: AuthService) { }
-
+  loginOK: Observable<string>;
   privateMenu: string;
 
+  constructor(public authService: AuthService) {
+    this.privateMenu = authService.getUsername();
+  }
+
+
+
   ngOnInit(): void {
-    this.privateMenu = this.authService.getUser();
+    this.loginOK = this.authService.getLoginOK();
+    this.loginOK.subscribe(user => this.privateMenu = user);
+
   }
 
 }
