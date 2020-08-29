@@ -1,19 +1,17 @@
-.containerImage {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-}
-
-button .left {
-	left: 10px;
-}
-
-button .right {
-	right: 10px;
+body {
+	display: grid;
+	grid-template-rows: auto, 50px;
+	grid-template-columns: auto;
 }
 
 .tile-image {
-	width: 100%;
+	width: 50%;
 	height: auto;
+}
+
+.tile-image-selected {
+	width: 50%;
+	height: auto;
+	border: 2px red solid;
+	border-radius: 30px;
 }

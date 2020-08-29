@@ -1,3 +1,9 @@
 <div class="containerImg">
-	<img [src]="imageSelected" />
+	<button mat-fab color="primary" class="left" (click)="on_left()">
+		<mat-icon>arrow_left</mat-icon>
+	</button>
+	<img [src]="imageSelected.uri" />
+	<button mat-fab color="primary" class="right" (click)="on_right()">
+		<mat-icon>arrow_right</mat-icon>
+	</button>
 </div>

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GalleryService } from './service';
 import { PageEvent } from '@angular/material/paginator';
-import { ImageSelectedComponent } from './image-selected/image-selected.component';
+import { ImageSelected } from './interface';
+
 
 @Component({
   selector: 'app-gallery',
@@ -15,7 +16,7 @@ export class GalleryComponent implements OnInit {
   currentPage: number = 1;
   currentImage: number = 0;
 
-  imageSelected: string;
+  imageSelected: ImageSelected;
 
   constructor(private galleryService: GalleryService) {
     this.getImageGallery(this.currentPage);
@@ -26,7 +27,10 @@ export class GalleryComponent implements OnInit {
     this.galleryService.getNatureImageGallery(page).subscribe(res => {
       res.photos.map(p => this.imageGallery.push(p.src.medium))
       if (!this.imageSelected) {
-        this.imageSelected = this.imageGallery[this.currentImage];
+        this.imageSelected = {
+          index: this.currentImage,
+          uri: this.imageGallery[this.currentImage],
+        }
       }
     });
   }
@@ -38,6 +42,13 @@ export class GalleryComponent implements OnInit {
 
   ngOnInit(): void {
 
+  }
+
+  newImageSelected(indexImage: number) {
+    this.imageSelected = {
+      index: indexImage,
+      uri: this.imageGallery[indexImage]
+    }
   }
 
 }

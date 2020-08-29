@@ -1,10 +1,18 @@
 .containerImg {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	align-items: center;
 	justify-content: center;
 }
 
 .containerImg img {
 	height: auto;
+}
+
+button .left {
+	margin-right: 10px;
+}
+
+button .right {
+	margin-left: 10px;
 }

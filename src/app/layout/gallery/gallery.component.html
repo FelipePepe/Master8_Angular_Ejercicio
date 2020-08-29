@@ -1,20 +1,22 @@
-<app-image-selected [imageSelected]="imageSelected"></app-image-selected>
+<app-image-selected
+	[imageSelected]="imageSelected"
+	(indexImageEvent)="newImageSelected($event)"
+></app-image-selected>
 <br />
 <div class="containerImage">
-	<button mat-fab color="primary" class="left">
-		<mat-icon>arrow_left</mat-icon>
-	</button>
 	<mat-grid-list cols="4" rowHeight="2:1">
 		<mat-grid-tile *ngFor="let image of imageGallery">
-			<img [src]="image" class="tile-image" />
+			<div *ngIf="image === imageSelected.uri">
+				<img [src]="image" class="tile-image-selected" />
+			</div>
+			<div *ngIf="image !== imageSelected.uri">
+				<img [src]="image" class="tile-image" />
+			</div>
 		</mat-grid-tile>
 	</mat-grid-list>
-	<button mat-fab color="primary" class="right">
-		<mat-icon>arrow_right</mat-icon>
-	</button>
 </div>
 <mat-paginator
-[length]="200"
-[pageSize]="4"
-(page)="pageEvent = getImageEvent($event)"
+	[length]="200"
+	[pageSize]="4"
+	(page)="pageEvent = getImageEvent($event)"
 ></mat-paginator>

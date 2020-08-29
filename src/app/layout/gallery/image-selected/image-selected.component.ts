@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, OnChanges, EventEmitter } from '@angular/core';
+import { ImageSelected } from '../interface'
 
 @Component({
   selector: 'app-image-selected',
@@ -8,7 +9,10 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 export class ImageSelectedComponent implements OnInit, OnChanges {
 
   @Input()
-  imageSelected: string;
+  imageSelected: ImageSelected;
+
+  @Output()
+  indexImageEvent = new EventEmitter<number>();
 
   constructor() { }
 
@@ -16,7 +20,19 @@ export class ImageSelectedComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(): void {
-    console.log(this.imageSelected);
+    console.log(this.imageSelected.uri);
+  }
+
+  on_left() {
+    if (this.imageSelected.index > 0) {
+      this.indexImageEvent.emit(this.imageSelected.index - 1)
+    }
+  }
+
+  on_right() {
+    if (this.imageSelected.index < 3) {
+      this.indexImageEvent.emit(this.imageSelected.index + 1)
+    }
   }
 
 }
