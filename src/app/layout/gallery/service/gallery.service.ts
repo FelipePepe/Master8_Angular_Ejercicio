@@ -18,7 +18,7 @@ export class GalleryService {
 
     let result: Observable<GalleryModel>;
 
-    result = this.http.get<GalleryModel>(`https://api.pexels.com/v1/search?query=nature&per_page=4&page=${currentPage}`, {
+    result = this.http.get<GalleryModel>(`https://api.pexels.com/v1/search?query=nature&per_page=${environment.imagePerPage}&page=${currentPage}`, {
       headers: this.header
     });
 

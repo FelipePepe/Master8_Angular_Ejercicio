@@ -1,9 +1,10 @@
 <mat-toolbar color="primary">
 	<img src="../../../assets/image_background.svg" />
-	<app-public-menu [hidden]="privateMenu" color="primary"></app-public-menu>
+	<app-public-menu [hidden]="userName" color="primary"></app-public-menu>
 	&nbsp;&nbsp;
 	<app-private-menu
-		[hidden]="!privateMenu"
-		color="secundary"
+		[hidden]="!userName"
+    color="secundary"
+    (userName)="userName"
 	></app-private-menu>
 </mat-toolbar>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GalleryService } from './service';
 import { PageEvent } from '@angular/material/paginator';
 import { ImageSelected } from './interface';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class GalleryComponent implements OnInit {
   pageEvent: PageEvent;
   currentPage: number = 1;
   currentImage: number = 0;
+  imagePerPage: number = environment.imagePerPage;
 
   imageSelected: ImageSelected;
 
@@ -26,12 +28,10 @@ export class GalleryComponent implements OnInit {
     this.imageGallery = [];
     this.galleryService.getNatureImageGallery(page).subscribe(res => {
       res.photos.map(p => this.imageGallery.push(p.src.medium))
-      if (!this.imageSelected) {
         this.imageSelected = {
-          index: this.currentImage,
+          index: 0,
           uri: this.imageGallery[this.currentImage],
         }
-      }
     });
   }
 

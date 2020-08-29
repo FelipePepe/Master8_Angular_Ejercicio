@@ -12,17 +12,17 @@ import { Observable } from 'rxjs';
 export class HeaderComponent implements OnInit {
 
   loginOK: Observable<string>;
-  privateMenu: string;
+  userName: string;
 
   constructor(public authService: AuthService) {
-    this.privateMenu = authService.getUsername();
+    this.userName = authService.getUsername();
   }
 
 
 
   ngOnInit(): void {
     this.loginOK = this.authService.getLoginOK();
-    this.loginOK.subscribe(user => this.privateMenu = user);
+    this.loginOK.subscribe(user => this.userName = user);
 
   }
 

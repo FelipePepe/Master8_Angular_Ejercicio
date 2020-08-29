@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../auth.service';
 
@@ -10,6 +10,8 @@ import { AuthService } from '../../auth.service';
 export class PrivateMenuComponent implements OnInit {
 
   router: Router;
+
+  @Input()
   username: string;
 
   constructor(public authService: AuthService, private routerprv: Router) {

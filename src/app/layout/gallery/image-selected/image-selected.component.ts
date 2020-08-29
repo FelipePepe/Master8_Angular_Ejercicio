@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, OnChanges, EventEmitter } from '@angular/core';
 import { ImageSelected } from '../interface'
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-image-selected',
@@ -10,6 +11,8 @@ export class ImageSelectedComponent implements OnInit, OnChanges {
 
   @Input()
   imageSelected: ImageSelected;
+
+  maxIndexImage: number = environment.imagePerPage;
 
   @Output()
   indexImageEvent = new EventEmitter<number>();

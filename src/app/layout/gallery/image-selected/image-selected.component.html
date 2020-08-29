@@ -1,9 +1,9 @@
 <div class="containerImg">
-	<button mat-fab color="primary" class="left" (click)="on_left()">
+	<button mat-fab color="primary" class="left" (click)="on_left()" *ngIf="imageSelected.index !== 0">
 		<mat-icon>arrow_left</mat-icon>
 	</button>
 	<img [src]="imageSelected.uri" />
-	<button mat-fab color="primary" class="right" (click)="on_right()">
+	<button mat-fab color="primary" class="right" (click)="on_right()" *ngIf="imageSelected.index !== maxIndexImage - 1">
 		<mat-icon>arrow_right</mat-icon>
 	</button>
 </div>

@@ -16,7 +16,7 @@
 	</mat-grid-list>
 </div>
 <mat-paginator
-	[length]="200"
-	[pageSize]="4"
+	[length]="50"
+	[pageSize]="imagePerPage"
 	(page)="pageEvent = getImageEvent($event)"
 ></mat-paginator>
