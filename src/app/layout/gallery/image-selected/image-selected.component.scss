@@ -1,12 +1,12 @@
 .containerImg {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 }
 
 .containerImg img {
-  height: auto;
+	height: auto;
 }
 
 .left {

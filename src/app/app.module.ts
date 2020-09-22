@@ -16,56 +16,57 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatCardModule } from "@angular/material/card";
-import { MatInputModule } from "@angular/material/input";
-import { MatSnackBarModule } from "@angular/material/snack-bar";
-import { MatGridListModule } from "@angular/material/grid-list";
-import { MatPaginatorModule } from "@angular/material/paginator";
-import { MatIconModule } from "@angular/material/icon";
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatIconModule } from '@angular/material/icon';
 
 import { LoginComponent } from './layout/login/login.component';
 import { AboutComponent } from './layout/about/about.component';
 import { DashboardComponent } from './layout/dashboard/dashboard.component';
 import { GalleryComponent } from './layout/gallery/gallery.component';
 import { CrudComponent } from './layout/crud/crud.component';
-import { ProfileComponent } from './layout/profile/profile.component'
+import { ProfileComponent } from './layout/profile/profile.component';
 import { AUTH_PROVIDERS } from './auth.service';
 import { LoggedInGuard } from './logged-in.guard';
-
+import { MenuComponent } from './layout/gallery/image-selected/menu/menu.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PublicMenuComponent,
-    PrivateMenuComponent,
-    HeaderComponent,
-    FooterComponent,
-    ContainerComponent,
-    LoginComponent,
-    AboutComponent,
-    DashboardComponent,
-    GalleryComponent,
-    CrudComponent,
-    ProfileComponent,
-    ImageSelectedComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatCardModule,
-    MatInputModule,
-    MatSnackBarModule,
-    MatGridListModule,
-    HttpClientModule,
-    MatPaginatorModule,
-    MatIconModule
-  ],
-  providers: [AUTH_PROVIDERS, LoggedInGuard],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		PublicMenuComponent,
+		PrivateMenuComponent,
+		HeaderComponent,
+		FooterComponent,
+		ContainerComponent,
+		LoginComponent,
+		AboutComponent,
+		DashboardComponent,
+		GalleryComponent,
+		CrudComponent,
+		ProfileComponent,
+		ImageSelectedComponent,
+		MenuComponent,
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		FormsModule,
+		BrowserAnimationsModule,
+		MatToolbarModule,
+		MatButtonModule,
+		MatFormFieldModule,
+		MatCardModule,
+		MatInputModule,
+		MatSnackBarModule,
+		MatGridListModule,
+		HttpClientModule,
+		MatPaginatorModule,
+		MatIconModule,
+	],
+	providers: [AUTH_PROVIDERS, LoggedInGuard],
+	bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
