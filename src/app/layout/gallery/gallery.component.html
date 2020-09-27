@@ -3,8 +3,8 @@
 	(indexImageEvent)="newImageSelected($event)"
 ></app-image-selected>
 <br />
-<div class="containerImage">
-	<mat-grid-list cols="4" rowHeight="2:1">
+<div class="containerImg">
+	<mat-grid-list cols="4" rowHeight="3:2">
 		<mat-grid-tile *ngFor="let image of imageGallery">
 			<div *ngIf="image === imageSelected.uri">
 				<img [src]="image" class="tile-image-selected" />

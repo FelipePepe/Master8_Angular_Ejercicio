@@ -6,9 +6,7 @@ import { ImageSelected } from '../../interface';
 	templateUrl: './menu.component.html',
 	styleUrls: ['./menu.component.scss'],
 })
-export class MenuComponent implements OnInit {
-	constructor() {}
-
+export class MenuComponent {
 	@Input()
 	imageSelected: ImageSelected;
 
@@ -18,10 +16,8 @@ export class MenuComponent implements OnInit {
 	pause: boolean = false;
 	pass: boolean = true;
 
-	ngOnInit(): void {}
-
 	onLeft() {
-		if (this.imageSelected.index >= 0) {
+		if (this.imageSelected.index > 0) {
 			this.imageSelected.index--;
 			this.indexImageEvent.emit(this.imageSelected.index);
 		}
@@ -40,7 +36,7 @@ export class MenuComponent implements OnInit {
 		setTimeout(() => {
 			this.onRight();
 			this.onPlay();
-		}, 1500);
+		}, 2000);
 	}
 
 	onPause() {
